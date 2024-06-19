@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+     <meta charset="UTF-8">
+     <title>Interface</title>
+	 <link rel="stylesheet" href = "stylesheet.css"/>
+	    <style>
+		select {
+			   width: 250px;
+			   height: 30px; /* Высота закрытого состояния */
+			   border: 1px solid #ccc;
+			   padding: 5px;
+			   }
+
+		select:hover {
+			   height: 30px; /* Высота открытого состояния */
+					 }
+
+		option {
+			   background-color: #fff;
+			   color: #000;
+			   text-align: center;
+			   }
+        </style>
+     </head>
+       <body>
+		<h1>Интерфейс</h1>
+				<main>
+				  <div class="container">
+					<div class="left">
+					  <h2>Сотрудники ОТК</h2>
+					   <div class="grid" id="userGrid">
+					   </div>
+					</div>
+				  <div class="right">
+					    <h2>Параметры</h2>
+						<select name="options" id="options">
+				            <option value="Option1">Option 1</option>
+				            <option value="Option2">Option 2</option>
+				            <option value="Option3">Option 3</option>
+						</select>     
+					 </div>
+				  </div>
+				  <script src="scripts/main.js"></script>
+				</main>
+		</body>
+ </html>
+
+
+   

@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+    color: #ff1;
+   }
+
+h2 {
+    text-align: center;
+    color: #dff;
+   }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+      }
+     
+.container {
+  display: grid;
+  grid-template-columns: 70% 30%; /* две колонки по 50% */
+  grid-template-rows: 1fr; /* одна строка */
+  width: 100%;
+           }
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #1b1b32;
+  color: #f5f6f7;
+  font-family: Tahoma;
+  font-size: 16px;
+  background-image: url("https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+      }
+
+.right {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+       }
+
+.left {
+  display: flex; /* Используем flexbox для выравнивания */
+  flex-direction: column; /* Элементы теперь будут располагаться вертикально */
+  align-items: center; /* Выравнивание элементов по центру по горизонтали */
+  justify-content: center; /* Выравнивание элементов по центру по вертикали */
+  height: 100%;
+   text-align: center;
+   background-color: rgba(0, 0, 0, 0.3);
+      } 
