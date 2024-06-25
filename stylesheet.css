@@ -1,51 +1,188 @@
 h1 {
-    text-align: center;
-    color: #ff1;
-   }
+  text-align: center;
+  color: #ff1;
+ }
 
 h2 {
-    text-align: center;
-    color: #dff;
-   }
+  text-align: center;
+  color: #dff;
+ }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-      }
-     
-.container {
   display: grid;
-  grid-template-columns: 70% 30%; /* две колонки по 50% */
-  grid-template-rows: 1fr; /* одна строка */
-  width: 100%;
-           }
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+    }
+   
+.container {
+display: grid;
+grid-template-columns: 70% 30%; /* две колонки по 50% */
+grid-template-rows: 1fr; /* одна строка */
+width: 100%;
+         }
 
 body {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  background-color: #1b1b32;
-  color: #f5f6f7;
-  font-family: Tahoma;
-  font-size: 16px;
-  background-image: url("https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-      }
+width: 100%;
+height: 100vh;
+margin: 0;
+background-color: #1b1b32;
+color: #f5f6f7;
+font-family: Tahoma;
+font-size: 16px;
+background-image: url("https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+    }
 
 .right {
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
-       }
+text-align: center;
+background-color: rgba(0, 0, 0, 0.3);
+     }
 
 .left {
-  display: flex; /* Используем flexbox для выравнивания */
-  flex-direction: column; /* Элементы теперь будут располагаться вертикально */
-  align-items: center; /* Выравнивание элементов по центру по горизонтали */
-  justify-content: center; /* Выравнивание элементов по центру по вертикали */
-  height: 100%;
-   text-align: center;
-   background-color: rgba(0, 0, 0, 0.3);
-      } 
+display: flex; /* Используем flexbox для выравнивания */
+flex-direction: column; /* Элементы будут располагаться вертикально */
+align-items: center; /* Выравнивание элементов по центру по горизонтали */
+justify-content: center; /* Выравнивание элементов по центру по вертикали */
+height: 100%;
+ text-align: center;
+ background-color: rgba(0, 0, 0, 0.3);
+    } 
+
+#productCreationSection,
+#assemblySection {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 10px;
+    }
+#productNameInput,
+#componentNamesInput,
+#replaceExistingCheckbox 
+    {
+      margin-bottom: 10px;
+    }
+
+#productIdentifierInput
+    {
+      margin-top: 20px;
+    }
+    
+#createProductButton {
+      margin-top: 5px; 
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+#createProductButton:hover {
+      background-color: #45a049;
+    }
+
+#deleteProductButton {
+      margin-top: 20px; 
+      margin-bottom: 20px;
+      margin-right: 110px;
+      padding: 10px 20px;
+      background-color: #f44336; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+#deleteProductButton:hover {
+      background-color: #d32f2f; 
+    }
+
+#findProductButton {
+      margin-top: 20px; 
+      margin-bottom: 20px;
+      margin-right: 125px;
+      padding: 10px 20px;
+      background-color: #f436bb; /
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+#findProductButton:hover {
+      background-color: #d32f2f; 
+    }
+
+#assignAssemblyButton {
+      margin-top: 10px; 
+      margin-bottom: 20px;
+      margin-right: 100px;
+      padding: 10px 20px;
+      background-color: #2196F3; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+#assignAssemblyButton:hover {
+      background-color: #1976D2; 
+    }
+
+#endAssemblyButton {
+      margin-top: 10px; 
+      margin-bottom: 20px;
+      margin-right: 100px;
+      padding: 10px 20px;
+      background-color: #21a6f3; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+#endAssemblyButton:hover {
+      background-color: #1976D2; 
+    }
+
+#cancelAssemblyButton {
+      margin-top: 10px; 
+      margin-bottom: 20px;
+      margin-right: 100px;
+      padding: 10px 20px;
+      background-color: #f32121; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+#cancelAssemblyButton:hover {
+      background-color: #1976D2; 
+    }
+
+#informationAssemblyButton {
+      margin-top: 10px; 
+      margin-bottom: 20px;
+      margin-right: 100px;
+      padding: 10px 20px;
+      background-color: #21f379; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+#informationAssemblyButton:hover {
+      background-color: #1976D2; 
+    }
