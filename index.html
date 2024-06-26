@@ -1,68 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Interface</title>
+    <title>Интерфейс</title>
     <link rel="stylesheet" href="stylesheet.css"/>
     <style>
-        select {
-            width: 250px;
-            height: 30px; /* Высота закрытого состояния */
-            border: 1px solid #ccc;
-            padding: 5px;
-        }
 
-        select:hover {
-            height: 30px; /* Высота открытого состояния */
-        }
+.nav-menu {
+    display: flex;
+    flex-direction: column; /* Элементы теперь будут располагаться в столбец */
+    align-items: flex-start; /* Выравнивание элементов слева */
+    padding: 20px;
+    list-style: none;
+    height: 100vh; /* Высота меню равна высоте видимой области экрана */
+}
 
-        option {
-            background-color: #fff;
-            color: #000;
-            text-align: center;
-        }
+.nav-menu li {
+    margin: 10px 0; /* Отступы между элементами списка */
+}
+
+.nav-menu a {
+    display: inline-block; /* Фон теперь будет ограничен длиной текста */
+    text-decoration: none;
+    color: #000;
+    background-color: #ddd; /* Возвращаем фон для ссылок */
+    padding: 5px 10px; /* Отступы вокруг текста */
+    border-radius: 5px; /* Скругление углов */
+}
+
+.nav-menu a:hover {
+    color: #555;
+    background-color: #ccc; /* Изменение фона при наведении */
+}
+
+ol {
+    counter-reset: list-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+ol li {
+    counter-increment: list-counter;
+    margin-bottom: 25px; /* Отступ между элементами списка */
+    display: inline-block; /* Фон теперь будет ограничен длиной текста */
+    color: darkblue; /* Цвет текста */
+    font-weight: bold; /* Жирный шрифт */
+    background-color: rgb(119, 128, 0); /* Возвращаем фон для всего пункта списка */
+    padding: 5px 10px; /* Внутренние отступы */
+    border-radius: 50px; /* Круглые углы */
+}
+
+ol li::before {
+    content: counter(list-counter) ". ";
+    display: inline-block;
+    margin-right: 10px; /* Отступ между номером и текстом */
+    background-color:  rgb(119, 128, 0); /* Возвращаем фон для номера */
+    color: white; /* Цвет текста номера */
+    border-radius: 50%; /* Круглые углы для поля с номером */
+}
+
     </style>
 </head>
 <body>
     <h1>Интерфейс</h1>
-    <main>
-        <div class="container">
-            <div class="left">
-                <h2>Сотрудники ОТК</h2>
-                <div class="grid" id="userGrid">
-                </div>
-            </div>
-            <div class="right">
-                <h2>Параметры</h2>
-                <div id="productCreationSection">
-                    <input type="text" id="productNameInput" placeholder="Название продукта" />
-                    <input type="text" id="componentNamesInput" placeholder="Названия компонентов, разделенные запятой" />
-                    <label for="replaceExistingCheckbox">Заменить существующий</label>
-                    <input type="checkbox" id="replaceExistingCheckbox" />
-                    <button id="createProductButton">Создать продукт</button>
-                    <input type="text" id="productIdentifierInput" placeholder="ID или имя продукта для удаления" />
-                    <button id="deleteProductButton">Удалить продукт</button>
-                    <div id="productSearchSection">
-                        <input type="text" id="productSearchInput" placeholder="ID или имя продукта для поиска" />
-                        <button id="findProductButton">Найти продукт</button>
-                    </div>
-                </div>  
-                <div id="assemblySection">
-                    <input type="text" id="assemblyProductIDInput" placeholder="UUID продукта" />
-                    <input type="number" id="assemblyProductAmountInput" placeholder="Количество продукта" />
-                    <input type="text" id="assemblyPersonIDInput" placeholder="UUID сборщика" />
-                    <button id="assignAssemblyButton">Назначить сборку</button>
-                    <button id="endAssemblyButton">Завершить сборку</button>
-                    <button id="cancelAssemblyButton">Отменить сборку</button>
-                    <button id="informationAssemblyButton">Информация о сборке</button>
-                </div>
-            </div>
+    <ol class="nav-menu">
+        <li data-section="employees"><a href="#employees">Сотрудники ОТК</a></li>
+        <li data-section="products"><a href="#products">Взаимодействие с продуктами</a></li>
+        <li data-section="assembly"><a href="#assembly">Взаимодействие со сборками</a></li>
+    </ol>
+    <div class="container">
+        <div id="employees" class="section left">
+            <h2>Сотрудники ОТК</h2>
+            <div class="grid" id="userGrid">
+			</div>
+			<button class="backButton">Назад</button>
         </div>
-        <script src="scripts/main.js"></script>
-    </main>
+        <div id="products" class="section right">
+            <h2>Взаимодействие с продуктами</h2>
+			<div id="productCreationSection">
+				<input type="text" id="productNameInput" placeholder="Название продукта" />
+				<input type="text" id="componentNamesInput" placeholder="Названия компонентов, разделенные запятой" />
+				<label for="replaceExistingCheckbox">Заменить существующий</label>
+				<input type="checkbox" id="replaceExistingCheckbox" />
+				<button id="createProductButton">Создать продукт</button>
+				<input type="text" id="productIdentifierInput" placeholder="ID или имя продукта для удаления" />
+				<button id="deleteProductButton">Удалить продукт</button>
+				<div id="productSearchSection">
+					<input type="text" id="productSearchInput" placeholder="ID или имя продукта для поиска" />
+					<button id="findProductButton">Найти продукт</button>
+				</div>
+			</div>
+			<button class="backButton">Назад</button>
+        </div>
+        <div id="assembly" class="section right">
+            <h2>Взаимодействие со сборками</h2>
+			<div id="assemblySection">
+				<input type="text" id="assemblyProductIDInput" placeholder="UUID продукта" />
+				<input type="number" id="assemblyProductAmountInput" placeholder="Количество продукта" />
+				<input type="text" id="assemblyPersonIDInput" placeholder="UUID сборщика" />
+				<button id="assignAssemblyButton">Назначить сборку</button>
+				<button id="endAssemblyButton">Завершить сборку</button>
+				<button id="cancelAssemblyButton">Отменить сборку</button>
+				<button id="informationAssemblyButton">Информация о сборке</button>
+			</div>
+			<button class="backButton">Назад</button>
+        </div>
+    </div>
+	<script src="scripts/main.js"></script>
 </body>
 </html>
-
 
    
    
