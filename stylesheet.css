@@ -107,7 +107,7 @@ height: 100%;
       margin-bottom: 20px;
       margin-right: 125px;
       padding: 10px 20px;
-      background-color: #f436bb; /
+      background-color: #f436bb; 
       color: white;
       border: none;
       border-radius: 5px;
@@ -185,4 +185,16 @@ height: 100%;
     
 #informationAssemblyButton:hover {
       background-color: #1976D2; 
+    }
+    .backButton {
+      margin-top: 20px; /* Отступ сверху */
+      padding: 10px 20px; /* Внутренние отступы */
+      background-color: #f2f2f2; /* Цвет фона */
+      border: 1px solid #ccc; /* Граница */
+      border-radius: 5px; /* Скругление углов */
+      cursor: pointer; /* Курсор в виде руки */
+    }
+    
+    .backButton:hover {
+      background-color: #e6e6e6; /* Цвет фона при наведении */
     }
