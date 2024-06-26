@@ -745,6 +745,54 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Функция для отображения раздела и скрытия основного меню
+function showSection(sectionId) {
+  // Скрываем основное меню
+  document.querySelector('.nav-menu').style.display = 'none';
+  
+  // Скрываем все разделы
+  document.querySelectorAll('.section').forEach(section => {
+      section.style.display = 'none';
+  });
+  
+  // Отображаем выбранный раздел
+  const sectionToShow = document.getElementById(sectionId);
+  if (sectionToShow) {
+      sectionToShow.style.display = 'block';
+  } else {
+      console.error('Раздел не найден:', sectionId);
+  }
+}
+
+// Функция для назначения обработчиков событий пунктов меню
+function assignMenuEventHandlers() {
+  document.querySelectorAll('.nav-menu li').forEach(menuItem => {
+      menuItem.addEventListener('click', function() {
+          const sectionId = this.getAttribute('data-section');
+          showSection(sectionId);
+      });
+  });
+}
+
+// Обработчик кнопки назад
+document.querySelectorAll('.backButton').forEach(button => {
+  button.addEventListener('click', function() {
+      // Скрываем все разделы
+      document.querySelectorAll('.section').forEach(section => {
+          section.style.display = 'none';
+      });
+      // Показываем главное меню
+      document.querySelector('.nav-menu').style.display = 'flex';
+      // Восстанавливаем обработчики событий для пунктов меню
+      assignMenuEventHandlers();
+  });
+});
+
+// Вызов функции для назначения обработчиков событий при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+  assignMenuEventHandlers();
+});
+
 // Основная функция для подключения и получения информации из БД
 async function main(){
   console.log("Запуск программы");
@@ -763,4 +811,4 @@ async function main(){
   grid.innerHTML = t;
 }
 
-main();
+main()
